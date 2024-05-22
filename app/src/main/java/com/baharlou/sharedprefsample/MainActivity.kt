@@ -19,7 +19,27 @@ class MainActivity : AppCompatActivity() {
 
         sharedPref = getSharedPreferences(SHARED_DATA, Context.MODE_PRIVATE)
 
+        showDataIfExist()
+
         submitClicked()
+    }
+
+    private fun showDataIfExist() {
+        val name = sharedPref.getString("name", "")
+        val email = sharedPref.getString("email", "")
+        val gender = sharedPref.getBoolean("isMale", false)
+
+
+        binding.txtName.setText(name)
+        binding.txtEmail.setText(email)
+
+        if (gender) {
+            binding.radioMale.isChecked = true
+        } else {
+            binding.radioMale.isChecked = false
+
+        }
+
     }
 
     private fun submitClicked() {
