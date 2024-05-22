@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.baharlou.sharedprefsample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         if (gender) {
             binding.radioMale.isChecked = true
         } else {
-            binding.radioMale.isChecked = false
+            binding.radioFemale.isChecked = true
 
         }
 
@@ -69,6 +70,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             editor.apply()
+
+            Toast.makeText(this, "Data Saved ", Toast.LENGTH_SHORT).show()
         }
     }
 }

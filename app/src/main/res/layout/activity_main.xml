@@ -55,6 +55,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:hint="Enter your email"
         app:layout_constraintTop_toBottomOf="@+id/txt_layout_name"
 
@@ -70,9 +72,10 @@
         android:id="@+id/txt_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
         android:text="Choose your gender"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_layout_email" />
 
@@ -89,7 +92,7 @@
             android:id="@+id/radio_female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="5dp"
             android:text="Female"
             tools:layout_editor_absoluteX="26dp"
             tools:layout_editor_absoluteY="454dp" />
@@ -98,7 +101,7 @@
             android:id="@+id/radio_male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="5dp"
             android:text="Male"
             tools:layout_editor_absoluteX="169dp"
             tools:layout_editor_absoluteY="451dp" />
