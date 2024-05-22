@@ -1,11 +1,14 @@
 package com.baharlou.sharedprefsample
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.baharlou.sharedprefsample.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,9 +23,26 @@ class MainActivity : AppCompatActivity() {
 
         sharedPref = getSharedPreferences(SHARED_DATA, Context.MODE_PRIVATE)
 
-        showDataIfExist()
+        checkFirstRun()
+
+//        showDataIfExist()
 
         submitClicked()
+    }
+
+    private fun checkFirstRun() {
+        val editor = sharedPref.edit()
+        val firstRun = sharedPref.getBoolean("firstRun", true)
+        if (firstRun) {
+            //Toast.makeText(this, "first time", Toast.LENGTH_SHORT).show()
+            editor.putBoolean("firstRun", false)
+            editor.commit()
+
+        } else {
+           // Toast.makeText(this, "second time", Toast.LENGTH_SHORT).show()
+            showDataIfExist()
+        }
+
     }
 
     private fun showDataIfExist() {
